@@ -4,22 +4,16 @@ The cleaner and more organized bridge from you to facebook platform.
 
 # Introduction #
 
----
-
 *Laravel Facebook* is the most simple solution for developers that need fast, autonomous and secure integration with the **Facebook platform**. Using the facebook php sdk v4 from April 28, 2014, Laravel Facebook establishes the cleaner and more organized intermediation between you and the platform.
 
 '*It just builds a bridge. You will have to pass for it.*' -- me
 
 # Needed knowledge #
 
----
-
 Facebook Platform utilizes their [Graph API](https://developers.facebook.com/docs/graph-api/quickstart/v2.0) as a primary way to get data in and out of Facebook's social graph.
 In order to get to the bottom at this package, you'll need to have the basick knowledge in access tokens and facebook permissions, but don't worry, it's really not heard at all.
 
 # Instalation #
-
----
 
 ## Required steps ##
 
@@ -27,7 +21,6 @@ In the ***require*** key of ***composer.json*** file add the following
 
 
 ```
-#!json
 "welderlourenco/laravel-facebook"	: "dev-master"
 ```
 
@@ -42,8 +35,6 @@ Once this operation completes, the final step is to add the ***provider*** and t
 
 
 ```
-#!php
-<?php
 return array(
   // ...
   'providers' => array(
@@ -63,7 +54,6 @@ Run the Config Publish command
 
 
 ```
-#!composer
 
 php artisan config:publish welderlourenco/laravel-facebook
 ```
@@ -72,8 +62,6 @@ Go to the generated config file in your application
 
 
 ```
-#!php
-<?php
 return array(	
     /*
 	|--------------------------------------------------------------------------
@@ -93,15 +81,11 @@ return array(
 
 # Available Methods / Usage #
 
----
-
 In any page, use the connect() method without passing any arguments to get a instance of the [FacebookRedirectLoginHelper](https://developers.facebook.com/docs/php/FacebookRedirectLoginHelper/4.0.0) object, allowing you to call its native methods.
 
 **Example: Get the login url.**
 
 ```
-#!php
-<?php
 $FacebookRedirectLoginHelper = Facebook::connect();
 echo $loginUrl = $FacebookRedirectLoginHelper->getLoginUrl();
 ```
@@ -110,16 +94,12 @@ Laravel Facebook allows you to chain these methods, looking way more pretty.
 
 
 ```
-#!php
-<?php
 echo Facebook::connect()->getLoginUrl();
 ```
 
 You can pass an array to the getLoginUrl method to define the scope.
 
 ```
-#!php
-<?php
 echo Facebook::connect()->getLoginUrl(array('email'));
 // public_profile (default scope) and email
 ```
@@ -129,8 +109,6 @@ In any page, use the connect() method again passing a accessToken as argument to
 **Example: Get session info.**
 
 ```
-#!php
-<?php
 $accessToken = 'example-of-access-token';
 dd(Facebook::connect($accessToken)->getSessionInfo());
 ```
@@ -140,8 +118,6 @@ In the redirect page, call the process() method to process the facebook answer a
 **Example: Process the facebook redirect, transform it to long-lived access token and get the access token.**
 
 ```
-#!php
-<?php
 $accessToken = Facebook::process()->getLongLivedSession()->getToken();
 // Now that you have the access token, do whatever you want with it, store in database or in a cookie, it is you call.
 ```
@@ -152,8 +128,6 @@ In any page use the api() method passing 3 arguments to get the [GraphObject](ht
 
 
 ```
-#!php
-<?php
 // FacebookSession, you'll need this to make any api calls.
 $session = Facebook::process()->getLongLivedSession();
 // Access Token
@@ -173,7 +147,5 @@ echo Facebook::change($newAppId, $newAppSecret, $optionalNewAppRedirectUrl)->con
 ```
 
 # Thanks #
-
----
 
 Thank God for the knowledge to write all this.
