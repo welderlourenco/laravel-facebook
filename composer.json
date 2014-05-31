@@ -1,21 +1,28 @@
 {
-  "name": "welderlourenco/laravel-facebook",
-  "description": "Facebook PHP SDK v4 for Laravel 4.1.x",
-  "authors": [
-    {
-      "name": "Welder Lourenço",
-      "email": "welderlourenco@yahoo.com.br"
+    "name": "welderlourenco/laravel-facebook",
+    "type": "library",
+    "description": "The cleaner and more organized bridge from you to facebook platform.",
+    "keywords": ["laravel","facebook", "laravel-facebook"],
+    "homepage": "https://github.com/welderlourenco/laravel-facebook",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Welder Lourenço",
+            "email": "welderlourenco@yahoo.com.br",
+            "homepage": "http://www.loginsocial.com.br/",
+            "role": "SEO"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "require-dev": {
+      "illuminate/support": "4.1.*",
+      "facebook/php-sdk-v4" : "4.0.*"
+    },
+    "autoload": {
+        "psr-0": {
+          "WelderLourenco\\Facebook\\": "src/"
+        }
     }
-  ],
-  "require": {
-    "php": ">=5.3.0",
-    "illuminate/support": "4.1.*",
-    "facebook/php-sdk-v4" : "4.0.*"
-  },
-  "autoload": {
-    "psr-0": {
-      "WelderLourenco\\Facebook\\": "src/"
-    }
-  },
-  "minimum-stability": "stable"
 }
