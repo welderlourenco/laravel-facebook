@@ -45,7 +45,7 @@ class Facebook
 	 */
 	private function setDefaultApp()
 	{
-		FacebookSession::setDefaultApplication(\Config::get('facebook::app.appId'), \Config::get('facebook::app.appSecret'));
+		FacebookSession::setDefaultApplication(\Config::get('laravel-facebook::app.appId'), \Config::get('laravel-facebook::app.appSecret'));
 	}
 
 	/**
@@ -57,7 +57,7 @@ class Facebook
 	{
 		try
 		{
-			return new FacebookRedirectLoginHelper(\Config::get('facebook::app.redirectUrl'));
+			return new FacebookRedirectLoginHelper(\Config::get('laravel-facebook::app.redirectUrl'));
 		}
 		catch (FacebookSDKException $ex)
 		{

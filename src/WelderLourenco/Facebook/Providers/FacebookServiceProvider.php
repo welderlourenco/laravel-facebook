@@ -20,7 +20,7 @@ class FacebookServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('welderlourenco/facebook');
+		$this->package('welderlourenco/laravel-facebook');
 	}
 
 	/**
@@ -35,7 +35,7 @@ class FacebookServiceProvider extends ServiceProvider {
 			return new Facebook;
 		});
 
-		$this->app['config']->package('loginsocial/facebook', __DIR__ . '/../../../config');
+		$this->app['config']->package('welderlourenco/laravel-facebook', __DIR__ . '/../../../config');
 	}
 
 	/**
