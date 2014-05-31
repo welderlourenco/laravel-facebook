@@ -55,7 +55,6 @@ Run the Config Publish command
 
 
 ```
-
 php artisan config:publish welderlourenco/laravel-facebook
 ```
 
