@@ -17,11 +17,12 @@ In order to get to the bottom at this package, you'll need to have the basic kno
 
 ## Required steps ##
 
-In the ***require*** key of ***composer.json*** file add the following
+In the ***require*** key of master ***composer.json*** file add the following.
 
 
 ```
-"welderlourenco/laravel-facebook"	: "dev-master"
+"facebook/php-sdk-v4" : "4.0.*",
+"welderlourenco/laravel-facebook" : "dev-master"
 ```
 
 Run the Composer update comand
