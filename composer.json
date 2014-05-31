@@ -2,7 +2,7 @@
     "name": "welderlourenco/laravel-facebook",
     "type": "library",
     "description": "The cleaner and more organized bridge from you to facebook platform.",
-    "keywords": ["laravel","facebook", "laravel-facebook"],
+    "keywords": ["laravel","facebook","auth"],
     "homepage": "https://github.com/welderlourenco/laravel-facebook",
     "license": "MIT",
     "authors": [
