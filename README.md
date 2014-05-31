@@ -11,7 +11,7 @@ The cleaner and more organized bridge from you to facebook platform.
 # Needed knowledge #
 
 Facebook Platform utilizes their [Graph API](https://developers.facebook.com/docs/graph-api/quickstart/v2.0) as a primary way to get data in and out of Facebook's social graph.
-In order to get to the bottom at this package, you'll need to have the basick knowledge in access tokens and facebook permissions, but don't worry, it's really not heard at all.
+In order to get to the bottom at this package, you'll need to have the basic knowledge in access tokens and facebook permissions, but don't worry, it's really not that hard.
 
 # Instalation #
 
