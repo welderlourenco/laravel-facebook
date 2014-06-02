@@ -20,7 +20,7 @@ In order to get to the bottom at this package, you'll need to have the basic kno
 In the ***require*** key of master ***composer.json*** file add the following.
 
 
-```
+```php
 "facebook/php-sdk-v4" : "4.0.*",
 "welderlourenco/laravel-facebook" : "dev-master"
 ```
@@ -35,7 +35,7 @@ composer update
 Once this operation completes, the final step is to add the ***provider*** and the ***alias*** in the ***app/config/app.php*** config file.
 
 
-```
+```php
 return array(
   // ...
   'providers' => array(
@@ -61,7 +61,7 @@ php artisan config:publish welderlourenco/laravel-facebook
 Go to the generated config file in your application
 
 
-```
+```php
 return array(	
     /*
 	|--------------------------------------------------------------------------
@@ -85,7 +85,7 @@ In any page, use the connect() method without passing any arguments to get a ins
 
 **Example: Get the login url.**
 
-```
+```php
 $FacebookRedirectLoginHelper = Facebook::connect();
 echo $loginUrl = $FacebookRedirectLoginHelper->getLoginUrl();
 ```
@@ -93,13 +93,13 @@ echo $loginUrl = $FacebookRedirectLoginHelper->getLoginUrl();
 Laravel Facebook allows you to chain these methods, looking way more pretty.
 
 
-```
+```php
 echo Facebook::connect()->getLoginUrl();
 ```
 
 You can pass an array to the getLoginUrl method to define the scope.
 
-```
+```php
 echo Facebook::connect()->getLoginUrl(array('email'));
 // public_profile (default scope) and email
 ```
@@ -108,7 +108,7 @@ In any page, use the connect() method again passing a accessToken as argument to
 
 **Example: Get session info.**
 
-```
+```php
 $accessToken = 'example-of-access-token';
 dd(Facebook::connect($accessToken)->getSessionInfo());
 ```
@@ -117,7 +117,7 @@ In the redirect page, call the process() method to process the facebook answer a
 
 **Example: Process the facebook redirect, transform it to long-lived access token and get the access token.**
 
-```
+```php
 $accessToken = Facebook::process()->getLongLivedSession()->getToken();
 // Now that you have the access token, do whatever you want with it, store in database or in a cookie, it is you call.
 ```
@@ -127,7 +127,7 @@ In any page use the api() method passing 3 arguments to get the [GraphObject](ht
 **Example: Process the facebook redirect, transform it to long-lived access token and get the access token and the user personal info.**
 
 
-```
+```php
 // FacebookSession, you'll need this to make any api calls.
 $session = Facebook::process()->getLongLivedSession();
 // Access Token
@@ -140,9 +140,7 @@ In any page, before calling the connect() or process() method use the change() p
 
 **Example: Get the login url from another app.**
 
-```
-#!php
-<?php
+```php
 echo Facebook::change($newAppId, $newAppSecret, $optionalNewAppRedirectUrl)->connect()->getLoginUrl();
 ```
 
