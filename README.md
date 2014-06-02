@@ -104,6 +104,8 @@ echo Facebook::connect()->getLoginUrl(array('email'));
 // public_profile (default scope) and email
 ```
 
+---
+
 In any page, use the connect() method again passing a accessToken as argument to get a instance of [FacebookSession](https://developers.facebook.com/docs/php/FacebookSession/4.0.0) object, allowing you to call its native methods.
 
 **Example: Get session info.**
@@ -113,6 +115,8 @@ $accessToken = 'example-of-access-token';
 dd(Facebook::connect($accessToken)->getSessionInfo());
 ```
 
+---
+
 In the redirect page, call the process() method to process the facebook answer and get a instance of the [FacebookSession](https://developers.facebook.com/docs/php/FacebookSession/4.0.0) object, allowing you to call its native methods.
 
 **Example: Process the facebook redirect, transform it to long-lived access token and get the access token.**
@@ -121,6 +125,8 @@ In the redirect page, call the process() method to process the facebook answer a
 $accessToken = Facebook::process()->getLongLivedSession()->getToken();
 // Now that you have the access token, do whatever you want with it, store in database or in a cookie, it is you call.
 ```
+
+---
 
 In any page use the api() method passing 3 arguments to get the [GraphObject](https://developers.facebook.com/docs/php/GraphObject/4.0.0) object, allowing you to call its native methods.
 
@@ -135,6 +141,8 @@ $accessToken = $session->getToken();
 // User info
 $user = Facebook::api($session, 'GET', '/me');
 ```
+
+---
 
 In any page, before calling the connect() or process() method use the change() passing 2 required method and 2 optional to change the app before connecting.
 
