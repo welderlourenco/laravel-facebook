@@ -106,17 +106,6 @@ echo Facebook::connect()->getLoginUrl(array('email'));
 
 ---
 
-In any page, use the connect() method again passing a accessToken as argument to get a instance of [FacebookSession](https://developers.facebook.com/docs/php/FacebookSession/4.0.0) object, allowing you to call its native methods.
-
-**Example: Get session info.**
-
-```php
-$accessToken = 'example-of-access-token';
-dd(Facebook::connect($accessToken)->getSessionInfo());
-```
-
----
-
 In the redirect page, call the process() method to process the facebook answer and get a instance of the [FacebookSession](https://developers.facebook.com/docs/php/FacebookSession/4.0.0) object, allowing you to call its native methods.
 
 **Example: Process the facebook redirect, transform it to long-lived access token and get the access token.**
@@ -124,6 +113,17 @@ In the redirect page, call the process() method to process the facebook answer a
 ```php
 $accessToken = Facebook::process()->getLongLivedSession()->getToken();
 // Now that you have the access token, do whatever you want with it, store in database or in a cookie, it is you call.
+```
+
+---
+
+In any page, use the connect() method again passing a accessToken as argument to get a instance of [FacebookSession](https://developers.facebook.com/docs/php/FacebookSession/4.0.0) object, allowing you to call its native methods.
+
+**Example: Get session info.**
+
+```php
+$accessToken = 'example-of-access-token';
+dd(Facebook::connect($accessToken)->getSessionInfo());
 ```
 
 ---
