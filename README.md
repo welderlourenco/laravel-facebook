@@ -144,7 +144,7 @@ $user = Facebook::api($session, 'GET', '/me');
 
 ---
 
-In any page, before calling the connect() or process() method use the change() passing 2 required method and 2 optional to change the app before connecting.
+In any page, before calling the connect() or process() method use the change() passing 2 required arguments and 2 optional to change the app before connecting.
 
 **Example: Get the login url from another app.**
 
